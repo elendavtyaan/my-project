@@ -1,0 +1,14 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#306998"/>
+  
+  <!-- Python logo simplified -->
+  <path d="M200 50 C 150 50, 100 75, 100 125 L 100 175 C 100 200, 125 225, 150 225 L 250 225 C 275 225, 300 200, 300 175 L 300 125 C 300 75, 250 50, 200 50 Z" fill="#FFD43B"/>
+  <path d="M175 100 A 25 25 0 1 0 175 150 A 25 25 0 1 0 175 100" fill="#306998"/>
+  
+  <!-- Course title -->
+  <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" 
+        font-family="Arial, sans-serif" font-size="24" fill="white">
+    Python ծրագրավորում
+  </text>
+</svg>

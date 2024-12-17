@@ -1,0 +1,1901 @@
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDV ուսուցման կենտրոն</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        /* Root variables */
+/* Root variables */
+:root {
+    --primary-color: #000000;
+    --accent-color: #FF5733;
+    --text-color: #ffffff;
+    --light-gray: #f8f9fa;
+    --white: #ffffff;
+    --dark-blue: #0a1930;
+    --darker-blue: #060d1b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--darker-blue) 0%, var(--dark-blue) 100%);
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    background: rgba(10, 25, 48, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* Courses section */
+.courses {
+    background: transparent;
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+/* Stats section */
+.stats {
+    background: transparent;
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+/* Testimonials */
+.testimonials {
+    background: transparent;
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+/* Footer */
+.footer {
+    background: var(--darker-blue);
+    color: var(--white);
+    padding: 4rem 2rem;
+}
+/* Card styles */
+.course-card,
+.testimonial-card,
+.about-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.course-card:hover,
+.testimonial-card:hover,
+.about-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Header styles */
+.header {
+    background: rgba(10, 25, 48, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.header.scrolled {
+    background: rgba(6, 13, 27, 0.98);
+}
+
+/* Footer styles */
+.footer {
+    background: var(--darker-blue);
+}
+
+/* Text colors */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+}
+
+p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Button styles */
+.apply-btn,
+.primary-btn {
+    background: var(--accent-color);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.apply-btn:hover,
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+/* Stats and numbers */
+.stat-number {
+    color: var(--accent-color);
+}
+
+/* Section titles */
+.section-title h2 {
+    color: var(--text-color);
+    text-shadow: 0 2px 15px rgba(255, 87, 51, 0.2);
+}
+
+.section-title p {
+    color: var(--accent-color);
+}
+
+/* Navigation links */
+.nav-links a {
+    color: var(--text-color);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+    .nav-links.active {
+        background: var(--darker-blue);
+    }
+}
+
+/* Animation */
+@keyframes backgroundFlow {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-5%, 5%); }
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+:root {
+    --primary-gradient: linear-gradient(135deg, #0a1930 0%, #1a1f36 100%);
+    --overlay-gradient: radial-gradient(circle at 20% 30%, rgba(255, 87, 51, 0.15) 0%, transparent 50%),
+                       radial-gradient(circle at 80% 70%, rgba(62, 84, 255, 0.15) 0%, transparent 50%);
+}
+
+/* Hero section */
+.hero,
+.about {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+.hero {
+    min-height: 100vh;
+    padding: 120px 2rem 80px;
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.about {
+    padding: 6rem 2rem;
+}
+
+/* Text colors */
+.hero h1,
+.about h2,
+.section-title h2 {
+    color: var(--white);
+    text-shadow: 0 2px 15px rgba(255, 87, 51, 0.2);
+}
+
+.hero p,
+.about p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Card styles */
+.about-card,
+.course-card,
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-card:hover,
+.course-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+/* Courses section */
+.courses {
+    background: var(--primary-gradient);
+}
+
+.courses::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--overlay-gradient);
+    animation: backgroundFlow 15s ease infinite;
+}
+
+/* Stats section */
+.stats {
+    background: var(--primary-gradient);
+}
+
+.stats::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--overlay-gradient);
+    animation: backgroundFlow 15s ease infinite;
+}
+
+/* Testimonials section */
+.testimonials {
+    background: var(--primary-gradient);
+}
+
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--overlay-gradient);
+    animation: backgroundFlow 15s ease infinite;
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-gradient);
+}
+
+/* Common section properties */
+.hero,
+.about,
+.courses,
+.stats,
+.testimonials,
+.footer {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section title colors update */
+.section-title h2 {
+    color: rgb(5, 4, 4);
+}
+
+.section-title p {
+    color: #ff5733;
+}
+
+/* Card and content background updates */
+.course-card,
+.testimonial-card,
+.about-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.course-card:hover,
+.testimonial-card:hover,
+.about-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Text color updates */
+p, h3, h4, .feature-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Animation for background flow */
+@keyframes backgroundFlow {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-5%, 5%); }
+}
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        /* Common background for hero and about sections */
+.hero,
+.about {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.hero::before,
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 25, 48, 0.95) 0%,
+        rgba(26, 31, 54, 0.95) 100%
+    );
+}
+
+/* Hero specific styles */
+.hero {
+    min-height: 100vh;
+    padding: 120px 2rem 80px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* About specific styles */
+.about {
+    padding: 6rem 2rem;
+    margin-top: -1px; /* Removes any possible gap */
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Card styles */
+.about-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Text colors */
+.hero h1,
+.about h2 {
+    background: linear-gradient(to right, #fff, #ff5733);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Statistics styles */
+.stat-number {
+    color: #ff5733;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Button styles */
+.primary-btn,
+.apply-btn {
+    background: #ff5733;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.primary-btn:hover,
+.apply-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255,87,51,0.3);
+}
+
+/* Decoration elements */
+.dots-decoration {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(#ff5733 1px, transparent 1px);
+    background-size: 10px 10px;
+    opacity: 0.2;
+}
+
+.dots-1 { top: 10%; left: 5%; }
+.dots-2 { bottom: 10%; right: 5%; }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero,
+    .about {
+        background-attachment: scroll;
+    }
+    
+    .hero h1,
+    .about h2 {
+        font-size: 2rem;
+    }
+}
+
+        /* Header */
+       /* Header-ի նոր ոճավորում */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+/* Logo ոճավորում */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: var(--accent-color);
+    border-radius: 8px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover::before {
+    transform: rotate(225deg);
+}
+
+/* Navigation ոճավորում */
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Գրանցվել կոճակի ոճավորում */
+.apply-btn {
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.apply-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.apply-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.apply-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,87,51,0.3);
+}
+
+/* Սքրոլի էֆեկտ */
+.header.scrolled {
+    padding: 0.8rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* Ակտիվ մենյուի կետի ոճավորում */
+.nav-links a.active {
+    color: var(--accent-color);
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Մոբայլ մենյուի ոճավորում */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        cursor: pointer;
+        z-index: 1001;
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-menu-btn.active {
+        transform: rotate(90deg);
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+}
+
+
+/* Hero section styles */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a1930 0%, #1a1f36 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 120px 2rem 80px;
+    display: flex;
+    align-items: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 87, 51, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(62, 84, 255, 0.15) 0%, transparent 50%);
+    animation: backgroundFlow 15s ease infinite;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #fff, #ff5733);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 15px rgba(255,87,51,0.3);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff5733;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.primary-btn, .secondary-btn {
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.primary-btn {
+    background: #ff5733;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255,87,51,0.3);
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.2);
+    color: white;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255,87,51,0.4);
+}
+
+.secondary-btn:hover {
+    transform: translateY(-3px);
+    border-color: #ff5733;
+    background: rgba(255,87,51,0.1);
+}
+
+/* Decorative elements */
+.hero-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.circle-1, .circle-2 {
+    position: absolute;
+    border-radius: 50%;
+    background: #ff5733;
+    opacity: 0.1;
+}
+
+.circle-1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -100px;
+}
+
+.circle-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    left: -50px;
+}
+
+.dots-1, .dots-2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(#ff5733 2px, transparent 2px);
+    background-size: 10px 10px;
+    opacity: 0.2;
+}
+
+.dots-1 {
+    top: 20%;
+    left: 10%;
+}
+
+.dots-2 {
+    bottom: 20%;
+    right: 10%;
+}
+
+@keyframes backgroundFlow {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-5%, 5%); }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 1rem 60px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .primary-btn, .secondary-btn {
+        justify-content: center;
+    }
+}
+/* Wave animation */
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffffff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Hero section responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero p {
+        font-size: 1.5rem;
+    }
+    
+    .hero .apply-btn {
+        font-size: 1.2rem;
+        padding: 1rem 2.5rem;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+   
+/* Անիմացիաներ */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Ալիքի էֆեկտ ներքևի մասում */
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffffff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* Դեկորատիվ էլեմենտներ */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    height: 200px;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M30,100 Q100,30 170,100 T310,100" stroke="white" fill="none" stroke-width="2"/></svg>');
+    opacity: 0.1;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+        /* Courses section */
+        .courses {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-image {
+            height: 160px; /* Նվազեցնում ենք բարձրությունը */
+    overflow: hidden;
+    position: relative;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover .course-image img {
+            transform: scale(1.1);
+        }
+
+        .course-badge {
+            position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 1; /* Համոզվում ենք, որ badge-ը վերևում է */
+        }
+
+        .course-content {
+            padding: 1.5rem; /* Փոքրացնում ենք padding-ը */
+        }
+
+        .course-title {
+            min-height: 3.6rem; /* Երկու տողի համար */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+        }
+
+        .course-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .course-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .course-price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Stats section */
+        .stats {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonials */
+      /* Testimonials section styles */
+.testimonials {
+    padding: 6rem 2rem;
+    background: var(--light-gray);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-author {
+    flex-grow: 1;
+}
+
+.testimonial-author h4 {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.testimonial-author p {
+    color: var(--accent-color);
+    margin: 0.2rem 0 0;
+    font-size: 0.9rem;
+}
+
+.testimonial-text {
+    color: #666;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.6;
+    flex-grow: 1;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.testimonial-text::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--accent-color);
+    opacity: 0.5;
+}
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 4rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Loading animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        /* About section-ի թարմացված ոճավորում */
+.about {
+    padding: 6rem 2rem;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--white);
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title h2 {
+    color: var(--white);
+}
+
+.section-title p {
+    color: var(--accent-color);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.about-text h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.about-features {
+    list-style: none;
+}
+
+.about-features li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--white);
+}
+
+.about-features i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-card i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.about-card h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.about-card p {
+    color: var(--white);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.about-cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 4rem;
+}
+
+.about-cta h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+}
+
+.about-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.about-cta .apply-btn {
+    font-size: 1.4rem;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    background: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255,87,51,0.4);
+}
+
+.about-cta .apply-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255,87,51,0.6);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-text h3 {
+        font-size: 2rem;
+    }
+    
+    .about-cta h3 {
+        font-size: 2rem;
+    }
+    
+    .about-cta .apply-btn {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-text h3 {
+        font-size: 1.75rem;
+    }
+    
+    .about-cta h3 {
+        font-size: 1.75rem;
+    }
+}
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--light-gray);
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading animation -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+    <section class="hero">
+        
+        <div class="hero-content">
+            <h1 data-aos="fade-up">EDV ուսուցման կենտրոն</h1>
+            <p data-aos="fade-up" data-aos-delay="100">
+                Ծրագրավորում • Դիզայն • Արհեստական բանականություն<br>
+                Սկսիր քո կարիերան հիմա
+            </p>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-item">
+                    <span class="stat-number">1500+</span>
+                    <span class="stat-label">Շրջանավարտներ</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Փորձառու դասախոսներ</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Աշխատանքի տեղավորում</span>
+                </div>
+            </div>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="#courses" class="primary-btn">
+                    Դիտել դասընթացները
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="secondary-btn">
+                    Անվճար խորհրդատվություն
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hero-decoration">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="dots-1"></div>
+            <div class="dots-2"></div>
+        </div>
+    </section>
+<!-- About section -->
+<section id="about" class="about">
+    <div class="section-title">
+        <h2 data-aos="fade-up">Մեր մասին</h2>
+        <p data-aos="fade-up">Ճանապարհ դեպի թվային աշխարհ</p>
+    </div>
+    
+    <div class="about-content">
+        <div class="about-grid">
+            <div class="about-text" data-aos="fade-right">
+                <h3>EDV ուսուցման կենտրոն</h3>
+                <p>Մենք առաջատար ուսումնական կենտրոն ենք, որը նվիրված է տեխնոլոգիական կրթության զարգացմանը: Մեր առաքելությունն է՝ տրամադրել բարձրորակ կրթություն և նպաստել մեր ուսանողների մասնագիտական աճին:</p>
+                <ul class="about-features">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Փորձառու դասախոսներ արդյունաբերությունից</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Ժամանակակից ուսումնական ծրագրեր</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Պրակտիկ նախագծեր իրական խնդիրների վրա</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Անհատական մոտեցում յուրաքանչյուր ուսանողի</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="about-cards" data-aos="fade-left">
+                <div class="about-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Որակյալ կրթություն</h4>
+                    <p>Մեր դասընթացները մշակված են ոլորտի փորձառու մասնագետների կողմից</p>
+                </div>
+                
+                <div class="about-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Փորձառու թիմ</h4>
+                    <p>Մեր դասախոսները ակտիվ մասնագետներ են տեխնոլոգիական ոլորտից</p>
+                </div>
+                
+                <div class="about-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>Պրակտիկ ուսուցում</h4>
+                    <p>Իրական նախագծեր և գործնական հմտությունների զարգացում</p>
+                </div>
+                
+                <div class="about-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>Կարիերայի աջակցություն</h4>
+                    <p>Օգնում ենք մեր ուսանողներին գտնել իրենց տեղը աշխատաշուկայում</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-cta" data-aos="fade-up">
+            <h3>Պատրա՞ստ եք սկսել ձեր ուսումնական ճանապարհորդությունը</h3>
+            <p>Միացեք մեզ և սկսեք ձեր կարիերան ՏՏ ոլորտում</p>
+            <a href="#courses" class="apply-btn">
+                Դիտել դասընթացները
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+    <!-- Header -->
+    <header class="header">
+        <a href="#" class="logo">EDV ուսուցման կենտրոն</a>
+        
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="nav-links">
+            <a href="#courses">Դասընթացներ</a>
+            <a href="#about">Մեր մասին</a>
+            <a href="#testimonials">Կարծիքներ</a>
+            <a href="#contact">Կապ</a>
+            <a href="registration.html" class="apply-btn">
+                Գրանցվել
+                <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+        </nav>
+    </header>
+
+  
+
+    <!-- Courses section -->
+    <section id="courses" class="courses">
+        <div class="section-title">
+            <h2 data-aos="fade-up">Մեր դասընթացները</h2>
+            <p data-aos="fade-up">Ընտրիր քո ուղին դեպի հաջողություն</p>
+        </div>
+        <div class="courses-grid">
+            <!-- Courses will be added here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Stats section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item" data-aos="fade-up">
+                <h3>1500+</h3>
+                <p>Ուսանողներ</p>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <h3>50+</h3>
+                <p>Փորձառու դասախոսներ</p>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                <h3>95%</h3>
+                <p>Աշխատանքի տեղավորում</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials section -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-title">
+            <h2 data-aos="fade-up">Ուսանողների կարծիքները</h2>
+            <p data-aos="fade-up">Կարդացեք մեր ուսանողների կարծիքները</p>
+        </div>
+        <div class="testimonials-grid">
+            <!-- Testimonials will be added here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-links">
+                <h4>Ծրագրեր</h4>
+                <a href="#">JavaScript</a>
+                <a href="#">Python</a>
+                <a href="#">UI/UX Design</a>
+                <a href="#">Գրաֆիկ դիզայն</a>
+                <a href="#">3D մոդելավորում</a>
+                <a href="#">Արհեստական բանականություն</a>
+               
+            </div>
+            <div class="footer-links">
+                <h4>Ռեսուրսներ</h4>
+                <a href="#">Բլոգ</a>
+                <a href="#">Հաճախ տրվող հարցեր</a>
+                <a href="#">Ուսանողների կարծիք
+                    <a href="#">Ուսանողների կարծիքներ</a>
+            </div>
+            <div class="footer-links">
+                <h4>Կապ</h4>
+                <a href="#">+374 96 48 41 48</a>
+                <a href="#">info@academy.am</a>
+                <a href="#">Երևան, Կենտրոն</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // AOS ինիցիալիզացիա
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Դասընթացների տվյալներ
+        const courses = [
+            {
+                title: "JavaScript ծրագրավորում",
+                image: "images/courses/javascript.svg",
+                badge: "Ամենապահանջված",
+                description: "Սովորիր ժամանակակից JavaScript՝ React և Node.js շրջանակներով",
+                duration: "6 ամիս",
+                schedule: "Երեկոյան դասեր",
+                price: "45,000 դրամ/ամիս",
+                features: ["96 դաս", "Պրակտիկ նախագծեր", "Կարիերայի խորհրդատվություն"]
+            },
+            {
+                title: "Python ծրագրավորում",
+                image: "images/courses/python.svg",
+                badge: "Նոր դասընթաց",
+                description: "Python ծրագրավորում՝ Django և մեքենայական ուսուցում",
+                duration: "6 ամիս",
+                schedule: "Երեկոյան դասեր",
+                price: "40,000 դրամ/ամիս",
+                features: ["96 դաս", "Անհատական մոտեցում", "Պրակտիկայի հնարավորություն"]
+            },
+            {
+                title: "UI/UX դիզայն",
+                image: "images/courses/ui-ux.svg",
+                badge: "Լավագույն առաջարկ",
+                description: "Սովորիր ստեղծել գեղեցիկ և հարմարավետ դիզայններ",
+                duration: "4 ամիս",
+                schedule: "Ճկուն գրաֆիկ",
+                price: "35,000 դրամ/ամիս",
+                features: ["64 դաս", "Adobe Creative Suite", "Պորտֆոլիոյի կազմում"]
+            },
+            
+    {
+        title: "Գրաֆիկ դիզայն",
+        image: "images/courses/graphic-design.svg",
+        badge: "Նոր դասընթաց",
+        description: "Photoshop, Illustrator և գրաֆիկ դիզայնի հիմունքներ",
+        duration: "5 ամիս",
+        schedule: "Շաբաթ/Կիրակի",
+        price: "38,000 դրամ/ամիս",
+        features: ["80 դաս", "Adobe Creative Suite", "Անհատական պրոյեկտներ"]
+    },
+    {
+        title: "3D մոդելավորում",
+        image: "images/courses/3d-modeling.svg",
+        badge: "Պահանջված",
+        description: "3D Max, Maya և ժամանակակից մոդելավորման տեխնոլոգիաներ",
+        duration: "6 ամիս",
+        schedule: "Երեկոյան դասեր",
+        price: "42,000 դրամ/ամիս",
+        features: ["96 դաս", "Պրոֆեսիոնալ ծրագրեր", "Պորտֆոլիոյի կազմում"]
+    },
+    {
+    title: "Արհեստական բանականություն",
+    image: "images/courses/ai.svg",
+    badge: "Hot",
+    description: "Machine Learning և AI ալգորիթմներ, Deep Learning և Neural Networks",
+    duration: "8 ամիս",
+    schedule: "Հիբրիդային ուսուցում",
+    price: "50,000 դրամ/ամիս",
+    features: [
+        "128 դաս","GPU սերվերների հասանելիություն", 
+        
+    ]
+}
+];
+        
+
+        // Ուսանողների կարծիքներ
+        const testimonials = [
+    {
+        name: "Անի Հակոբյան",
+        image: "images/testimonials/ani.svg",
+        course: "JavaScript ծրագրավորում",
+        text: "Հիանալի դասընթաց էր: Սկսեցի զրոյից և արդեն աշխատում եմ որպես Front-end ծրագրավորող:"
+    },
+    {
+        name: "Դավիթ Սարգսյան",
+        image: "images/testimonials/davit.svg",
+        course: "Python ծրագրավորում",
+        text: "Շատ պրոֆեսիոնալ դասախոսներ և հետաքրքիր պրակտիկ առաջադրանքներ:"
+    },
+    {
+        name: "Մարիամ Պետրոսյան",
+        image: "images/testimonials/mariam.svg",
+        course: "UI/UX դիզայն",
+        text: "Դասընթացի ավարտից հետո արդեն ունեմ մի քանի հաճախորդ և աշխատում եմ ազատ գրաֆիկով:"
+    },
+    {
+        name: "Արմեն Գրիգորյան",
+        image: "images/testimonials/armen.svg",
+        course: "Գրաֆիկ դիզայն",
+        text: "Լավագույն դասընթացն էր: Սովորեցի ոչ միայն տեխնիկական հմտություններ, այլ նաև ստեղծագործական մտածելակերպ:"
+    },
+    {
+        name: "Լիլիթ Հարությունյան",
+        image: "images/testimonials/lilit.svg",
+        course: "3D մոդելավորում",
+        text: "Հիանալի փորձ էր: Դասախոսները միշտ պատրաստ էին օգնել և բացատրել բարդ թեմաները: Այժմ աշխատում եմ խոշոր գեյմինգ ընկերությունում:"
+    },
+    {
+        name: "Սուրեն Մելքոնյան",
+        image: "images/testimonials/suren.svg",
+        course: "Արհեստական բանականություն",
+        text: "Չնայած դասընթացի բարդությանը, դասախոսները կարողացան պարզ և հասկանալի ձևով բացատրել AI-ի բարդ կոնցեպտները: Շնորհիվ այս դասընթացի, այժմ աշխատում եմ որպես AI մասնագետ միջազգային ընկերությունում:"
+    }
+];
+
+        // Դասընթացների ցուցադրում
+        function displayCourses() {
+            const coursesGrid = document.querySelector('.courses-grid');
+            coursesGrid.innerHTML = courses.map((course, index) => `
+                <div class="course-card" data-aos="fade-up" data-aos-delay="${index * 200}">
+                    <div class="course-image">
+                        <img src="${course.image}" alt="${course.title}">
+                        <span class="course-badge">${course.badge}</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">${course.title}</h3>
+                        <div class="course-info">
+                            <span><i class="fas fa-calendar"></i> ${course.duration}</span>
+                            <span><i class="fas fa-clock"></i> ${course.schedule}</span>
+                        </div>
+                        <p class="course-description">${course.description}</p>
+                        <div class="course-features">
+                            ${course.features.map(feature => `
+                                <span class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    ${feature}
+                                </span>
+                            `).join('')}
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">${course.price}</span>
+                            <a href="registration.html" class="apply-btn">Գրանցվել</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Կարծիքների ցուցադրում
+        function displayTestimonials() {
+            const testimonialsGrid = document.querySelector('.testimonials-grid');
+            testimonialsGrid.innerHTML = testimonials.map((testimonial, index) => `
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="${index * 200}">
+                    <div class="testimonial-header">
+                        <div class="testimonial-image">
+                            <img src="${testimonial.image}" alt="${testimonial.name}">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>${testimonial.name}</h4>
+                            <p>${testimonial.course}</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">${testimonial.text}</p>
+                </div>
+            `).join('');
+        }
+
+        // Loading անիմացիայի հեռացում
+        window.addEventListener('load', () => {
+            const loader = document.querySelector('.loader');
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 1000);
+            
+            // Դասընթացների և կարծիքների ցուցադրում
+            displayCourses();
+            displayTestimonials();
+        });
+
+        
+        // Հարթ սքրոլ
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Փակել բջջային մենյուն սեղմելուց հետո
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelector('.nav-links');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    // Հարթ սքրոլի համար նախատեսված ֆունկցիա
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').slice(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                const headerOffset = 70; // Header-ի բարձրությունը
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Փակել մոբայլ մենյուն սքրոլից հետո
+                navLinks.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            }
+        });
+    });
+    
+    // Սքրոլի ժամանակ header-ի ոճավորում
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Ակտիվ մենյուի կետի հետևում
+    const sections = document.querySelectorAll('section');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+
+// Մոբայլ մենյուի ֆունկցիոնալություն
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+        </script>
+</body>
+</html>

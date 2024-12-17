@@ -1,0 +1,19 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#FF4081"/>
+  
+  <!-- Design Tools -->
+  <circle cx="200" cy="120" r="50" fill="white"/>
+  <path d="M170 100 L230 100 L200 150 Z" fill="#FF4081"/>
+  <circle cx="180" cy="90" r="10" fill="#FF4081"/>
+  <circle cx="220" cy="90" r="10" fill="#FF4081"/>
+  
+  <!-- Pencil -->
+  <path d="M260 80 L240 100 L250 110 L270 90 Z" fill="#FFD700"/>
+  
+  <!-- Course title -->
+  <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" 
+        font-family="Arial, sans-serif" font-size="24" fill="white">
+    Գրաֆիկ դիզայն
+  </text>
+</svg>

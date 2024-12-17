@@ -1,0 +1,15 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#4B0082"/>
+  
+  <!-- 3D Cube -->
+  <path d="M160 80 L240 80 L280 120 L200 160 L120 120 Z" fill="#9370DB" />
+  <path d="M200 160 L280 120 L280 200 L200 240 Z" fill="#8A2BE2"/>
+  <path d="M120 120 L200 160 L200 240 L120 200 Z" fill="#6A5ACD"/>
+  
+  <!-- Course title -->
+  <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" 
+        font-family="Arial, sans-serif" font-size="24" fill="white">
+    3D մոդելավորում
+  </text>
+</svg>

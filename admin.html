@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDV Ադմին վահանակ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        .admin-header { 
+            background: #f8f9fa;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        .card {
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="admin-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>EDV Ադմինիստրատորի վահանակ</h1>
+                <a href="index.html" class="btn btn-outline-primary">Դեպի կայք</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Courses Section -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Դասընթացներ</h5>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCourseModal">
+                            Ավելացնել դասընթաց
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="coursesTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Վերնագիր</th>
+                                        <th>Կատեգորիա</th>
+                                        <th>Դասախոս</th>
+                                        <th>Գին</th>
+                                        <th>Գործողություններ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Will be filled by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registrations Section -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Գրանցումներ</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="registrationsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Անուն</th>
+                                        <th>Email</th>
+                                        <th>Հեռախոս</th>
+                                        <th>Դասընթաց</th>
+                                        <th>Կարգավիճակ</th>
+                                        <th>Գործողություններ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Will be filled by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Course Modal -->
+    <div class="modal fade" id="addCourseModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Նոր դասընթաց</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addCourseForm">
+                        <div class="mb-3">
+                            <label class="form-label">Վերնագիր</label>
+                            <input type="text" class="form-control" name="title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Նկարագրություն</label>
+                            <textarea class="form-control" name="description" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Նկար URL</label>
+                            <input type="text" class="form-control" name="image" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Badge</label>
+                            <input type="text" class="form-control" name="badge">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Տևողություն</label>
+                            <input type="text" class="form-control" name="duration" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Գրաֆիկ</label>
+                            <input type="text" class="form-control" name="schedule" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Գին</label>
+                            <input type="text" class="form-control" name="price" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Կատեգորիա</label>
+                            <select class="form-control" name="category_id" required>
+                                <!-- Will be filled by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Դասախոս</label>
+                            <select class="form-control" name="teacher_id" required>
+                                <!-- Will be filled by JavaScript -->
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Չեղարկել</button>
+                    <button type="button" class="btn btn-primary" onclick="addCourse()">Ավելացնել</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const supabase = supabase.createClient(
+            'https://ooyzbdvynxoljjiciumi.supabase.co',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9veXpiZHZ5bnhvbGpqaWNpdW1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE5NDM2MjEsImV4cCI6MjA0NzUxOTYyMX0.RZfovXV3jFp6-0myL29_wXG45nsrJCm-7V5sWWhHgUQ'
+        );
+
+        // Load all data
+        async function loadData() {
+            await Promise.all([
+                loadCourses(),
+                loadCategories(),
+                loadTeachers(),
+                loadRegistrations()
+            ]);
+        }
+
+        // Load courses
+        async function loadCourses() {
+            const { data: courses, error } = await supabase
+                .from('courses')
+                .select(`
+                    *,
+                    category:categories(name),
+                    course_teachers(
+                        teacher:teachers(name)
+                    )
+                `);
+
+            if (error) {
+                console.error('Error loading courses:', error);
+                return;
+            }
+
+            document.querySelector('#coursesTable tbody').innerHTML = courses.map(course => `
+                <tr>
+                    <td>${course.id}</td>
+                    <td>${course.title}</td>
+                    <td>${course.category?.name || ''}</td>
+                    <td>${course.course_teachers[0]?.teacher.name || ''}</td>
+                    <td>${course.price}</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning" onclick="editCourse(${course.id})">
+                            <i class="fas fa-edit"></i> Խմբագրել
+                        </button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteCourse(${course.id})">
+                            <i class="fas fa-trash"></i> Ջնջել
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Load categories
+        async function loadCategories() {
+            const { data: categories, error } = await supabase
+                .from('categories')
+                .select('*');
+
+            if (error) {
+                console.error('Error loading categories:', error);
+                return;
+            }
+
+            document.querySelector('select[name="category_id"]').innerHTML = categories.map(category => 
+                `<option value="${category.id}">${category.name}</option>`
+            ).join('');
+        }
+
+        // Load teachers
+        async function loadTeachers() {
+            const { data: teachers, error } = await supabase
+                .from('teachers')
+                .select('*');
+
+            if (error) {
+                console.error('Error loading teachers:', error);
+                return;
+            }
+
+            document.querySelector('select[name="teacher_id"]').innerHTML = teachers.map(teacher => 
+                `<option value="${teacher.id}">${teacher.name}</option>`
+            ).join('');
+        }
+
+        // Load registrations
+        async function loadRegistrations() {
+            const { data: registrations, error } = await supabase
+                .from('registrations')
+                .select(`
+                    *,
+                    course:courses(title)
+                `);
+
+            if (error) {
+                console.error('Error loading registrations:', error);
+                return;
+            }
+
+            document.querySelector('#registrationsTable tbody').innerHTML = registrations.map(reg => `
+                <tr>
+                    <td>${reg.name}</td>
+                    <td>${reg.email}</td>
+                    <td>${reg.phone}</td>
+                    <td>${reg.course?.title || ''}</td>
+                    <td>${reg.status}</td>
+                    <td>
+                        <button class="btn btn-sm btn-success" onclick="updateRegistrationStatus(${reg.id}, 'approved')">
+                            Հաստատել
+                        </button>
+                        <button class="btn btn-sm btn-danger" onclick="updateRegistrationStatus(${reg.id}, 'rejected')">
+                            Մերժել
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Add new course
+        async function addCourse() {
+            const form = document.getElementById('addCourseForm');
+            const formData = new FormData(form);
+            const courseData = Object.fromEntries(formData.entries());
+            
+            // First insert the course
+            const { data: course, error: courseError } = await supabase
+                .from('courses')
+                .insert([courseData])
+                .select()
+                .single();
+
+            if (courseError) {
+                alert('Սխալ դասընթացի ավելացման ժամանակ');
+                console.error(courseError);
+                return;
+            }
+
+            // Then create the teacher association
+            const { error: teacherError } = await supabase
+                .from('course_teachers')
+                .insert([{
+                    course_id: course.id,
+                    teacher_id: courseData.teacher_id
+                }]);
+
+            if (teacherError) {
+                alert('Սխալ դասախոսի կցման ժամանակ');
+                console.error(teacherError);
+                return;
+            }
+
+            alert('Դասընթացը հաջողությամբ ավելացված է');
+            form.reset();
+            bootstrap.Modal.getInstance(document.getElementById('addCourseModal')).hide();
+            loadCourses();
+        }
+
+        // Delete course
+        async function deleteCourse(id) {
+            if (confirm('Հաստատեք դասընթացի ջնջումը')) {
+                const { error } = await supabase
+                    .from('courses')
+                    .delete()
+                    .eq('id', id);
+
+                if (error) {
+                    alert('Սխալ ջնջման ժամանակ');
+                    console.error(error);
+                    return;
+                }
+
+                alert('Դասընթացը հաջողությամբ ջնջված է');
+                loadCourses();
+            }
+        }
+
+        // Update registration status
+        async function updateRegistrationStatus(id, status) {
+            const { error } = await supabase
+                .from('registrations')
+                .update({ status })
+                .eq('id', id);
+
+            if (error) {
+                alert('Սխալ կարգավիճակի թարմացման ժամանակ');
+                console.error(error);
+                return;
+            }
+
+            loadRegistrations();
+        }
+
+        // Load data when page loads
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+</body>
+</html>
